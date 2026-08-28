@@ -38,7 +38,6 @@ import {
 
 import {
   COLORS,
-  SIZES,
 } from '@constants/theme';
 
 import {
@@ -1118,449 +1117,284 @@ export default function HomeScreen() {
 }
 
 
-const styles =
-  StyleSheet.create({
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
+
+  container: {
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingTop: 12,
+  },
+
+  watermarkTop: {
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginTop: 6,
+    marginBottom: 18,
+  },
+
+  headerRight: {
+    alignItems: 'flex-end',
+  },
+
+  themeButton: {
+    minHeight: 42,
+    borderWidth: 1,
+    borderRadius: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+  },
+
+  flashText: {
+    marginTop: 10,
+  },
+
+  banner: {
+    width: '100%',
+    height: 155,
+    marginTop: 14,
+    borderRadius: 18,
+    overflow: 'hidden',
+    position: 'relative',
+    backgroundColor: COLORS.primary,
+  },
+
+  bannerPhoto: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: '100%',
+    height: '100%',
+  },
+
+  bannerOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    paddingHorizontal: 20,
+
+    backgroundColor: 'rgba(0, 0, 0, 0.12)',
+  },
+
+  bannerCaption: {
+    marginTop: 5,
+  },
+
+  categories: {
+    flexDirection: 'row',
+    marginTop: 16,
+    gap: 6,
+  },
+
+  chip: {
+    flex: 1,
+    minHeight: 46,
+
+    borderWidth: 1,
+    borderRadius: 14,
+
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    paddingHorizontal: 4,
+  },
+
+  listArea: {
+    flex: 1,
+    marginTop: 15,
+  },
 
-    safeArea: {
-      flex: 1,
-    },
+  listContent: {
+    paddingBottom: 10,
+  },
 
+  productCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
 
-    container: {
-      flex: 1,
+    borderRadius: 17,
 
-      paddingHorizontal:
-        SIZES.lg,
+    padding: 12,
+    marginBottom: 10,
+  },
 
-      paddingTop:
-        SIZES.sm,
-    },
+  imageBox: {
+    width: 74,
+    height: 74,
 
+    borderRadius: 12,
+    overflow: 'hidden',
 
-    watermarkTop: {
-      alignItems:
-        'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
-      marginBottom:
-        SIZES.sm,
-    },
+  productImage: {
+    width: '88%',
+    height: '88%',
+  },
 
+  productInfo: {
+    flex: 1,
+    marginLeft: 13,
+  },
 
-    header: {
-      flexDirection:
-        'row',
+  price: {
+    marginTop: 4,
+    marginBottom: 5,
+  },
 
-      justifyContent:
-        'space-between',
+  orderButton: {
+    width: 62,
+    marginLeft: 8,
+  },
 
-      alignItems:
-        'flex-start',
+  stateContainer: {
+    flex: 1,
 
-      marginBottom:
-        SIZES.lg,
-    },
+    alignItems: 'center',
+    justifyContent: 'center',
 
+    padding: 20,
+  },
 
-    headerRight: {
-      alignItems:
-        'flex-end',
-    },
+  stateText: {
+    marginTop: 12,
+  },
 
+  errorText: {
+    textAlign: 'center',
+  },
 
-    themeButton: {
-      minHeight: 40,
+  retryButton: {
+    marginTop: 12,
+    minWidth: 120,
+  },
 
-      borderWidth: 1,
+  emptyList: {
+    flexGrow: 1,
 
-      borderRadius:
-        SIZES.radiusLg,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
-      justifyContent:
-        'center',
+  watermarkBottom: {
+    alignItems: 'center',
 
-      paddingHorizontal:
-        SIZES.md,
-    },
+    paddingTop: 8,
+    paddingBottom: 6,
+  },
 
+  // =========================
+  // MODAL
+  // =========================
 
-    flashText: {
-      marginTop:
-        SIZES.sm,
-    },
+  modalBackdrop: {
+    flex: 1,
 
+    backgroundColor: 'rgba(0, 0, 0, 0.50)',
 
-    banner: {
-      width: '100%',
-      height: 130,
+    justifyContent: 'center',
+    alignItems: 'center',
 
-      marginTop:
-        SIZES.md,
+    padding: 24,
+  },
 
-      borderRadius:
-        SIZES.radiusLg,
+  modalCard: {
+    width: '100%',
+    maxWidth: 380,
 
-      overflow: 'hidden',
+    borderRadius: 22,
 
-      position:
-        'relative',
+    padding: 22,
 
-      backgroundColor:
-        COLORS.primary,
-    },
+    alignItems: 'center',
+  },
 
+  modalStudent: {
+    alignSelf: 'stretch',
 
-    bannerPhoto: {
-      position:
-        'absolute',
+    textAlign: 'center',
 
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
+    marginBottom: 12,
+  },
 
-      width: '100%',
-      height: '100%',
-    },
+  modalImage: {
+    width: 150,
+    height: 150,
+  },
 
+  modalTitle: {
+    marginTop: 12,
+    textAlign: 'center',
+  },
 
-    bannerOverlay: {
-      position:
-        'absolute',
+  modalCategory: {
+    marginTop: 7,
+  },
 
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
+  modalDescription: {
+    textAlign: 'center',
+    marginTop: 8,
+  },
 
-      alignItems:
-        'center',
+  quantityRow: {
+    flexDirection: 'row',
 
-      justifyContent:
-        'center',
+    alignItems: 'center',
+    justifyContent: 'center',
 
-      paddingHorizontal:
-        SIZES.lg,
+    marginTop: 20,
+  },
 
-      backgroundColor:
-        'rgba(0, 0, 0, 0.12)',
-    },
+  quantityButton: {
+    width: 38,
+    height: 38,
 
+    borderWidth: 1,
+    borderRadius: 10,
 
-    bannerCaption: {
-      marginTop:
-        SIZES.xs,
-    },
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
+  quantityAdd: {
+    marginLeft: 8,
+  },
 
-    categories: {
-      flexDirection:
-        'row',
+  quantityText: {
+    minWidth: 46,
+    textAlign: 'center',
+  },
 
-      marginTop:
-        SIZES.md,
+  expiredText: {
+    marginTop: 12,
+    textAlign: 'center',
+  },
 
-      gap:
-        SIZES.xs,
-    },
+  modalActions: {
+    width: '100%',
+    marginTop: 20,
+  },
 
-
-    chip: {
-      flex: 1,
-
-      minHeight: 44,
-
-      borderWidth: 1,
-
-      borderRadius:
-        SIZES.radiusMd,
-
-      alignItems:
-        'center',
-
-      justifyContent:
-        'center',
-
-      paddingHorizontal:
-        SIZES.xs,
-    },
-
-
-    listArea: {
-      flex: 1,
-
-      marginTop:
-        SIZES.md,
-    },
-
-
-    listContent: {
-      paddingBottom:
-        SIZES.md,
-    },
-
-
-    productCard: {
-      flexDirection:
-        'row',
-
-      alignItems:
-        'center',
-
-      borderRadius:
-        SIZES.radiusLg,
-
-      padding:
-        SIZES.md,
-
-      marginBottom:
-        SIZES.sm,
-    },
-
-
-    imageBox: {
-      width: 72,
-      height: 72,
-
-      borderRadius:
-        SIZES.radiusMd,
-
-      overflow:
-        'hidden',
-
-      alignItems:
-        'center',
-
-      justifyContent:
-        'center',
-    },
-
-
-    productImage: {
-      width: '88%',
-      height: '88%',
-    },
-
-
-    productInfo: {
-      flex: 1,
-
-      marginLeft:
-        SIZES.md,
-    },
-
-
-    price: {
-      marginTop:
-        SIZES.xs,
-
-      marginBottom:
-        SIZES.xs,
-    },
-
-
-    orderButton: {
-      width: 62,
-
-      marginLeft:
-        SIZES.sm,
-    },
-
-
-    stateContainer: {
-      flex: 1,
-
-      alignItems:
-        'center',
-
-      justifyContent:
-        'center',
-
-      padding:
-        SIZES.xl,
-    },
-
-
-    stateText: {
-      marginTop:
-        SIZES.md,
-    },
-
-
-    errorText: {
-      textAlign:
-        'center',
-    },
-
-
-    retryButton: {
-      marginTop:
-        SIZES.md,
-
-      minWidth: 120,
-    },
-
-
-    emptyList: {
-      flexGrow: 1,
-
-      alignItems:
-        'center',
-
-      justifyContent:
-        'center',
-    },
-
-
-    watermarkBottom: {
-      alignItems:
-        'center',
-
-      paddingVertical:
-        SIZES.sm,
-    },
-
-
-    modalBackdrop: {
-      flex: 1,
-
-      backgroundColor:
-        'rgba(0,0,0,0.45)',
-
-      justifyContent:
-        'center',
-
-      alignItems:
-        'center',
-
-      padding:
-        SIZES.xl,
-    },
-
-
-    modalCard: {
-      width: '100%',
-
-      maxWidth: 390,
-
-      borderRadius:
-        SIZES.radiusLg,
-
-      padding:
-        SIZES.xl,
-
-      alignItems:
-        'center',
-    },
-
-
-    modalStudent: {
-      alignSelf:
-        'stretch',
-
-      textAlign:
-        'center',
-
-      marginBottom:
-        SIZES.md,
-    },
-
-
-    modalImage: {
-      width: 160,
-      height: 160,
-    },
-
-
-    modalTitle: {
-      marginTop:
-        SIZES.md,
-
-      textAlign:
-        'center',
-    },
-
-
-    modalCategory: {
-      marginTop:
-        SIZES.sm,
-    },
-
-
-    modalDescription: {
-      textAlign:
-        'center',
-
-      marginTop:
-        SIZES.sm,
-    },
-
-
-    quantityRow: {
-      flexDirection:
-        'row',
-
-      alignItems:
-        'center',
-
-      justifyContent:
-        'center',
-
-      marginTop:
-        SIZES.xl,
-    },
-
-
-    quantityButton: {
-      width: 38,
-      height: 38,
-
-      borderWidth: 1,
-
-      borderRadius:
-        SIZES.radiusSm,
-
-      alignItems:
-        'center',
-
-      justifyContent:
-        'center',
-    },
-
-
-    quantityAdd: {
-      marginLeft:
-        SIZES.sm,
-    },
-
-
-    quantityText: {
-      minWidth: 44,
-
-      textAlign:
-        'center',
-    },
-
-
-    expiredText: {
-      marginTop:
-        SIZES.md,
-
-      textAlign:
-        'center',
-    },
-
-
-    modalActions: {
-      width: '100%',
-
-      marginTop:
-        SIZES.xl,
-    },
-
-
-    closeButton: {
-      marginTop:
-        SIZES.sm,
-    },
-
-  });
+  closeButton: {
+    marginTop: 9,
+  },
+});
