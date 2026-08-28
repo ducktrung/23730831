@@ -68,46 +68,63 @@ function mapCategory(
 
 export async function fetchProducts():
 Promise<Product[]> {
-  const response =
-    await fetch(
-      'https://fakestoreapi.com/products?limit=8',
-    );
+  const controller =
+    new AbortController();
 
-  if (!response.ok) {
-    throw new Error(
-      `HTTP error: ${response.status}`,
-    );
-  }
+  const timeout =
+    setTimeout(() => {
+      controller.abort();
+    }, 8000);
 
-  const data: ApiProduct[] =
-    await response.json();
-
-  return data.map(item => {
-    const category =
-      mapCategory(
-        item.category,
+  try {
+    const response =
+      await fetch(
+        'https://fakestoreapi.com/products?limit=8',
+        {
+          signal:
+            controller.signal,
+        },
       );
 
-    return {
-      id: item.id,
+    if (!response.ok) {
+      throw new Error(
+        `HTTP error: ${response.status}`,
+      );
+    }
 
-      title: item.title,
+    const data: ApiProduct[] =
+      await response.json();
 
-      price: Math.round(
-        item.price *
-          PRICE_MULTIPLIER,
-      ),
+    return data.map(item => {
+      const category =
+        mapCategory(
+          item.category,
+        );
 
-      image: item.image,
+      return {
+        id: item.id,
 
-      description:
-        item.description,
+        title: item.title,
 
-      categoryId:
-        category.id,
+        price:
+          Math.round(
+            item.price *
+              PRICE_MULTIPLIER,
+          ),
 
-      categoryLabel:
-        category.label,
-    };
-  });
+        image: item.image,
+
+        description:
+          item.description,
+
+        categoryId:
+          category.id,
+
+        categoryLabel:
+          category.label,
+      };
+    });
+  } finally {
+    clearTimeout(timeout);
+  }
 }
